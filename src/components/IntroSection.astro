@@ -1,10 +1,11 @@
 <section class="hero-container">
+  <div class="hero-content">
     <div class="hero">
       <h1>Hola, soy <span class="nombre">Juan De Dios Quiroz</span></h1>
       <p>Desarrollador Web & Especialista en Odoo</p>
       <a href="#contacto" class="btn">Contáctame</a>
     </div>
-  
+
     <div class="about">
       <h2>Sobre mí</h2>
       <p>
@@ -14,46 +15,54 @@
         Me apasiona crear soluciones eficientes y elegantes tanto en diseño como en funcionalidad.
       </p>
     </div>
-  
-    <div class="photo-container">
-      <img src="/photo-perfil.png" alt="Foto desarrollador" class="profile-photo" />
-    </div>
-  </section>
-  
-  <style>
-    .hero-container {
+  </div>
+
+  <div class="photo-container">
+    <img src="/photo-perfil.png" alt="Foto desarrollador" class="profile-photo" />
+  </div>
+</section>
+
+<style>
+  .hero-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    padding: 4rem 2rem;
+    padding: 6rem 2rem 4rem; /* Más padding arriba para el navbar */
     color: #ffffff;
-    gap: 2rem;
-    flex-wrap: nowrap;
-    }
+    gap: 3rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
 
-    .hero, .about {
+  .hero-content {
     flex: 1;
-    max-width: 33%;
-    }
-
-    .nombre {
-      color:aqua;
-      font-size: 20px;
-    }
-
-    .photo {
-    flex: 0.8;
+    min-width: 300px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    }
-    .photo-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hero, .about {
+    width: 100%;
+  }
+
+  .nombre {
+    color: aqua;
+    font-size: 1.25em;
+  }
+
+  .photo-container {
     width: 200px;
     height: 200px;
+    min-width: 200px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid rgba(4, 38, 75, 0.7); /* Borde azul oscuro */
-    box-shadow: 0 0 20px rgba(4, 38, 75, 4); /* Sombra suave */
+    border: 3px solid rgba(4, 38, 75, 0.7);
+    box-shadow: 0 0 20px rgba(4, 38, 75, 4);
+    position: relative;
+    z-index: 1;
   }
 
   .profile-photo {
@@ -62,7 +71,7 @@
     object-fit: cover;
   }
 
-    .btn {
+  .btn {
     margin-top: 1rem;
     padding: 0.6rem 1.4rem;
     background-color: #007bff;
@@ -73,27 +82,50 @@
     display: inline-block;
     font-weight: bold;
     transition: background 0.3s ease;
-    }
+  }
 
-    .btn:hover {
+  .btn:hover {
     background-color: #0056b3;
-    }
+  }
 
-    @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     .hero-container {
-        flex-direction: column;
-        text-align: center;
+      flex-direction: column-reverse;
+      text-align: center;
+      padding: 5rem 1rem 2rem; /* Ajuste para navbar móvil */
+      gap: 1.5rem;
     }
 
-    .hero, .about, .photo {
-        max-width: 100%;
+    .photo-container {
+      margin-top: 1rem;
     }
 
-    .photo img.circular {
-        width: 180px;
-        height: 180px;
-    }
+    .hero-content {
+      align-items: center;
     }
 
-  </style>
-  
+    .btn {
+      margin: 1rem auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-container {
+      padding-top: 4rem; /* Menos espacio en móviles muy pequeños */
+    }
+    
+    .hero h1 {
+      font-size: 1.5rem;
+    }
+    
+    .hero p, .about p {
+      font-size: 0.9rem;
+    }
+    
+    .photo-container {
+      width: 150px;
+      height: 150px;
+      min-width: 150px;
+    }
+  }
+</style>
