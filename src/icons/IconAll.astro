@@ -17,16 +17,20 @@ import IconNodeJs from "./IconNodeJs.astro";
 import IconVite from "./IconVite.astro";
 import IconFigma from "./IconFigma.astro";
 
+// 1. Define un tipo para todas las claves posibles
+export type IconKey = keyof typeof ICONS;
+
+// 2. Objeto de iconos con inferencia de tipos
 export const ICONS = {
   html: IconHtml,
   css: IconCss,
-  javaScript: IconJavaScript,
+  javascript: IconJavaScript, // Nota: clave en minúsculas para consistencia
   react: IconReact,
   astro: IconAstro,
   nextjs: IconNextjs,
   tailwind: IconTailwind,
   reactQuery: IconReactQuery,
-  typeScript: IconTypeScript,
+  typescript: IconTypeScript, // Minúsculas para consistencia
   zustand: IconZustand,
   git: IconGit,
   github: IconGitHub,
@@ -35,12 +39,15 @@ export const ICONS = {
   nodejs: IconNodeJs,
   vite: IconVite,
   figma: IconFigma,
-  // add new icons here <--
-  // Make sure that when calling the icon the key is the same
-  // "optional" in the IconKeys const file adds the icon key for when you call IconKeys.nameIcon
 };
 
-export function getIconComponent(iconName: string) {
-  return ICONS[iconName] || null;
+// 3. Función con validación de tipos estricta
+export function getIconComponent(iconName: IconKey): typeof ICONS[IconKey] {
+  return ICONS[iconName];
 }
----
+
+// 4. Opcional: Tipo para props de componente que usen iconos
+export type WithIconProps = {
+  icon: IconKey;
+  [key: string]: any;
+};
