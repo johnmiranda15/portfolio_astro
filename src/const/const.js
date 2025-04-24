@@ -108,7 +108,7 @@ export const studies = [
   
   export const projects = [
     {
-      img: "../../../img/ecommerce-stripe-2.webp",
+      img: "./ecommerce-stripe-2.webp",
       title: "Ecommerce Stripe",
       link: "https://ecommerce-stripe-763m.vercel.app/",
       description: `Proyecto FullStack de un ecommerce con pasarela de pagos stripe integrada, destalles de el product etc.  `,
@@ -131,7 +131,7 @@ export const studies = [
       ],
     },
     {
-      img: "../../../img/nexanime.webp",
+      img: "./nexanime.webp",
       title: "NexAnime",
       link: "https://nexanime.vercel.app",
       description: `plataforma de anime para ver los animes en tendencia , más valorados , estadísticas.`,
@@ -148,7 +148,7 @@ export const studies = [
       ],
     },
     {
-      img: "../../../img/cyberpunk.webp",
+      img: "./cyberpunk.webp",
       title: "cyberpunk",
       link: "https://preeminent-liger-266356.netlify.app/",
       description: `este proyecto se trata de un clon de la pagína de cyberpunk , donde

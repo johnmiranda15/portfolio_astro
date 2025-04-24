@@ -1,6 +1,6 @@
 <section class="hero-container">
     <div class="hero">
-      <h1>Hola, soy <span class="nombre">Tu Nombre</span></h1>
+      <h1>Hola, soy <span class="nombre">Juan De Dios Quiroz</span></h1>
       <p>Desarrollador Web & Especialista en Odoo</p>
       <a href="#contacto" class="btn">Contáctame</a>
     </div>
@@ -15,17 +15,16 @@
       </p>
     </div>
   
-    <div class="photo">
-      <img src="/photo-perfil.png" alt="Foto desarrollador" class="circular" />
+    <div class="photo-container">
+      <img src="/photo-perfil.png" alt="Foto desarrollador" class="profile-photo" />
     </div>
   </section>
   
   <style>
     .hero-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    background: linear-gradient(to bottom, rgba(0, 36, 66, 0.95), #0a0f1c);
     padding: 4rem 2rem;
     color: #ffffff;
     gap: 2rem;
@@ -37,28 +36,31 @@
     max-width: 33%;
     }
 
+    .nombre {
+      color:aqua;
+      font-size: 20px;
+    }
+
     .photo {
     flex: 0.8;
     display: flex;
     justify-content: center;
     align-items: center;
     }
-
-    .photo img.circular {
-    width: 240px;
-    height: 240px;
+    .photo-container {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    object-fit: cover;
-    background-color: transparent;
-    border: 3px solid #007bff33;
-    box-shadow: 0 0 15px #007bff44;
     overflow: hidden;
-    clip-path: circle(50% at 50% 50%);
-    }
+    border: 3px solid rgba(4, 38, 75, 0.7); /* Borde azul oscuro */
+    box-shadow: 0 0 20px rgba(4, 38, 75, 4); /* Sombra suave */
+  }
 
-    .nombre {
-    color: #009dff; /* azul más vivo */
-    }
+  .profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
     .btn {
     margin-top: 1rem;
