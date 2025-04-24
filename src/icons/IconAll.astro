@@ -1,0 +1,46 @@
+---
+import IconAstro from "./IconAstro.astro";
+import IconNextjs from "./IconNextjs.astro";
+import IconTailwind from "./IconTailwind.astro";
+import IconReactQuery from "./IconReactQuery.astro";
+import IconTypeScript from "./IconTypeScript.astro";
+import IconZustand from "./IconZustand.astro";
+import IconHtml from "./IconHtml.astro";
+import IconCss from "./IconCss.astro";
+import IconReact from "./IconReact.astro";
+import IconGit from "./IconGit.astro";
+import IconGitHub from "./IconGtiHub.astro";
+import IconStripe from "./IconStripe.astro";
+import IconJavaScript from "./IconJavaScritp.astro";
+import IconMongodb from "./IconMongodb.astro";
+import IconNodeJs from "./IconNodeJs.astro";
+import IconVite from "./IconVite.astro";
+import IconFigma from "./IconFigma.astro";
+
+export const ICONS = {
+  html: IconHtml,
+  css: IconCss,
+  javaScript: IconJavaScript,
+  react: IconReact,
+  astro: IconAstro,
+  nextjs: IconNextjs,
+  tailwind: IconTailwind,
+  reactQuery: IconReactQuery,
+  typeScript: IconTypeScript,
+  zustand: IconZustand,
+  git: IconGit,
+  github: IconGitHub,
+  stripe: IconStripe,
+  mongodb: IconMongodb,
+  nodejs: IconNodeJs,
+  vite: IconVite,
+  figma: IconFigma,
+  // add new icons here <--
+  // Make sure that when calling the icon the key is the same
+  // "optional" in the IconKeys const file adds the icon key for when you call IconKeys.nameIcon
+};
+
+export function getIconComponent(iconName: string) {
+  return ICONS[iconName] || null;
+}
+---
